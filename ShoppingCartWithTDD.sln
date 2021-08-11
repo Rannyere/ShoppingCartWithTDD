@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TDD", "TDD", "{0B443A84-0E46-410A-847B-913E31C068FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F9817DE7-9616-4E74-8637-06985E53CF1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Sales.Application.Tests", "Tests\PlanetStore.Sales.Application.Tests\PlanetStore.Sales.Application.Tests.csproj", "{C5E1DD56-DCFD-4797-A23C-401F12367615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Sales.Domain.Tests", "Tests\PlanetStore.Sales.Domain.Tests\PlanetStore.Sales.Domain.Tests.csproj", "{2B487B07-22B7-4CB8-8F65-7BF64F9A6495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Sales.Data", "src\PlanetStore.Sales.Data\PlanetStore.Sales.Data.csproj", "{4CA80D0A-6258-40E0-88FC-4C5DA4D17FE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Sales.Domain", "src\PlanetStore.Sales.Domain\PlanetStore.Sales.Domain.csproj", "{555A4608-55CA-4C98-BF1A-FED8C2D710C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Core", "src\PlanetStore.Core\PlanetStore.Core.csproj", "{AF44C62D-A56E-45AD-B518-DA47D2651C03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5E1DD56-DCFD-4797-A23C-401F12367615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E1DD56-DCFD-4797-A23C-401F12367615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E1DD56-DCFD-4797-A23C-401F12367615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E1DD56-DCFD-4797-A23C-401F12367615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B487B07-22B7-4CB8-8F65-7BF64F9A6495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B487B07-22B7-4CB8-8F65-7BF64F9A6495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B487B07-22B7-4CB8-8F65-7BF64F9A6495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B487B07-22B7-4CB8-8F65-7BF64F9A6495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA80D0A-6258-40E0-88FC-4C5DA4D17FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA80D0A-6258-40E0-88FC-4C5DA4D17FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA80D0A-6258-40E0-88FC-4C5DA4D17FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA80D0A-6258-40E0-88FC-4C5DA4D17FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555A4608-55CA-4C98-BF1A-FED8C2D710C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555A4608-55CA-4C98-BF1A-FED8C2D710C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555A4608-55CA-4C98-BF1A-FED8C2D710C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555A4608-55CA-4C98-BF1A-FED8C2D710C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF44C62D-A56E-45AD-B518-DA47D2651C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF44C62D-A56E-45AD-B518-DA47D2651C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF44C62D-A56E-45AD-B518-DA47D2651C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF44C62D-A56E-45AD-B518-DA47D2651C03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE03EF4F-2ABA-45C4-B616-72EC03D6A6B1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F9817DE7-9616-4E74-8637-06985E53CF1E} = {0B443A84-0E46-410A-847B-913E31C068FB}
+		{C5E1DD56-DCFD-4797-A23C-401F12367615} = {F9817DE7-9616-4E74-8637-06985E53CF1E}
+		{2B487B07-22B7-4CB8-8F65-7BF64F9A6495} = {F9817DE7-9616-4E74-8637-06985E53CF1E}
+		{4CA80D0A-6258-40E0-88FC-4C5DA4D17FE6} = {0B443A84-0E46-410A-847B-913E31C068FB}
+		{555A4608-55CA-4C98-BF1A-FED8C2D710C5} = {0B443A84-0E46-410A-847B-913E31C068FB}
+		{AF44C62D-A56E-45AD-B518-DA47D2651C03} = {0B443A84-0E46-410A-847B-913E31C068FB}
+	EndGlobalSection
+EndGlobal
