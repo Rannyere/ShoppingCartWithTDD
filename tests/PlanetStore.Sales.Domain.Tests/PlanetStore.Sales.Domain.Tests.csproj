@@ -13,4 +13,7 @@
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PlanetStore.Sales.Domain\PlanetStore.Sales.Domain.csproj" />
+  </ItemGroup>
 </Project>
