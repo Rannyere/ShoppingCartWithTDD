@@ -12,7 +12,7 @@ namespace PlanetStore.Sales.Domain
 
         public OrderItem(Guid productId, string productName, int quantity, decimal unitValue)
         {
-            if (quantity < Order.MIN_UNITS_ITEM) throw new DomainException();
+            if (quantity < Order.MIN_UNITS_ITEM) throw new DomainException($"Minimun units {Order.MIN_UNITS_ITEM} per product below the allowed");
 
             ProductId = productId;
             ProductName = productName;

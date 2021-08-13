@@ -27,16 +27,33 @@ namespace PlanetStore.Sales.Domain
             TotalValue = OrderItems.Sum(i => i.CalculateValue());
         }
 
+        private bool OrderItemExisting(OrderItem orderItem)
+        {
+            return _orderItems.Any(p => p.ProductId == orderItem.ProductId);
+        }
+
+        private void ValidateQuantityItemAllowed(OrderItem item)
+        {
+            var quantityItems = item.Quantity;
+            if (OrderItemExisting(item))
+            {
+                var itemExisting = _orderItems.FirstOrDefault(p => p.ProductId == item.ProductId);
+                quantityItems += itemExisting.Quantity;
+            }
+
+            if (quantityItems > MAX_UNITS_ITEM) throw new DomainException($"Maximum units {MAX_UNITS_ITEM} per product above the allowed");
+        }
+
         public void AddItem(OrderItem orderItem)
         {
-            if (orderItem.Quantity > MAX_UNITS_ITEM) throw new DomainException();
+            ValidateQuantityItemAllowed(orderItem);
 
-            if (_orderItems.Any(p => p.ProductId == orderItem.ProductId))
+            if (OrderItemExisting(orderItem))
             {
                 var itemExisting = _orderItems.FirstOrDefault(p => p.ProductId == orderItem.ProductId);
+
                 itemExisting.AddUnits(orderItem.Quantity);
                 orderItem = itemExisting;
-
                 _orderItems.Remove(itemExisting);
             }
 

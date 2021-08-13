@@ -50,10 +50,26 @@ namespace PlanetStore.Sales.Domain.Tests
             // Arrange
             var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
             var productId = Guid.NewGuid();
-            var orderItem = new OrderItem(productId, "Product Test", 16, 100);
+            var orderItem = new OrderItem(productId, "Product Test", Order.MAX_UNITS_ITEM + 1, 100);
 
             // Act & Assert
             Assert.Throws<DomainException>(() => order.AddItem(orderItem));
+        }
+
+        [Fact(DisplayName = "Add Units ExistingItem with Units above allowed")]
+        [Trait("Category", "Order Tests")]
+        public void AddItemOrder_AddUnitsItemExistingAboveAllowed_MustReturnException()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var productId = Guid.NewGuid();
+            var orderItem = new OrderItem(productId, "Product Test", 1, 100);
+            order.AddItem(orderItem);
+
+            var orderItem2 = new OrderItem(productId, "Product Test", Order.MAX_UNITS_ITEM, 100);
+
+            // Act & Assert
+            Assert.Throws<DomainException>(() => order.AddItem(orderItem2));
         }
     }
 }
