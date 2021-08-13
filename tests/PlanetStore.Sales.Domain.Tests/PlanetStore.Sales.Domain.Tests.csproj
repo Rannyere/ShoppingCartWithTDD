@@ -15,5 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\PlanetStore.Sales.Domain\PlanetStore.Sales.Domain.csproj" />
+    <ProjectReference Include="..\..\src\PlanetStore.Core\PlanetStore.Core.csproj" />
   </ItemGroup>
 </Project>

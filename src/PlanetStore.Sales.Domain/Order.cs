@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using PlanetStore.Core.DomainObjects;
 
 namespace PlanetStore.Sales.Domain
 {
     public class Order
     {
+        public static int MAX_UNITS_ITEM => 15;
+        public static int MIN_UNITS_ITEM => 1;
+
         public Guid CustomerId { get; private set; }
         public decimal TotalValue { get; private set; }
         public OrderStatus OrderStatus { get; private set; }
@@ -25,6 +29,8 @@ namespace PlanetStore.Sales.Domain
 
         public void AddItem(OrderItem orderItem)
         {
+            if (orderItem.Quantity > MAX_UNITS_ITEM) throw new DomainException();
+
             if (_orderItems.Any(p => p.ProductId == orderItem.ProductId))
             {
                 var itemExisting = _orderItems.FirstOrDefault(p => p.ProductId == orderItem.ProductId);

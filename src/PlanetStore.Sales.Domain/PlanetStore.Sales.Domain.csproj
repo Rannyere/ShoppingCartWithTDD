@@ -4,4 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PlanetStore.Core\PlanetStore.Core.csproj" />
+  </ItemGroup>
 </Project>

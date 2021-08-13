@@ -1,4 +1,6 @@
 ﻿using System;
+using PlanetStore.Core.DomainObjects;
+
 namespace PlanetStore.Sales.Domain
 {
     public class OrderItem
@@ -10,6 +12,8 @@ namespace PlanetStore.Sales.Domain
 
         public OrderItem(Guid productId, string productName, int quantity, decimal unitValue)
         {
+            if (quantity < Order.MIN_UNITS_ITEM) throw new DomainException();
+
             ProductId = productId;
             ProductName = productName;
             Quantity = quantity;

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using PlanetStore.Core.DomainObjects;
 using Xunit;
 
 namespace PlanetStore.Sales.Domain.Tests
@@ -40,6 +41,19 @@ namespace PlanetStore.Sales.Domain.Tests
             Assert.Equal(300, order.TotalValue);
             Assert.Equal(1, order.OrderItems.Count);
             Assert.Equal(3, order.OrderItems.FirstOrDefault(p => p.ProductId == productId).Quantity);
+        }
+
+        [Fact(DisplayName = "New Item with Units above allowed")]
+        [Trait("Category", "Order Tests")]
+        public void NewItemOrder_UnitsItemAboveAllowed_MustReturnException()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var productId = Guid.NewGuid();
+            var orderItem = new OrderItem(productId, "Product Test", 16, 100);
+
+            // Act & Assert
+            Assert.Throws<DomainException>(() => order.AddItem(orderItem));
         }
     }
 }
