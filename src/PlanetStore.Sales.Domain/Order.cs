@@ -32,6 +32,11 @@ namespace PlanetStore.Sales.Domain
             return _orderItems.Any(p => p.ProductId == orderItem.ProductId);
         }
 
+        private void ValidateItemNonExistent(OrderItem item)
+        {
+            if (!OrderItemExisting(item)) throw new DomainException($"Item nonexistent in Order");
+        }
+
         private void ValidateQuantityItemAllowed(OrderItem item)
         {
             var quantityItems = item.Quantity;
@@ -60,6 +65,20 @@ namespace PlanetStore.Sales.Domain
             _orderItems.Add(orderItem);
             CalculateTotalValueOrder();
         }
+
+        public void UpdateItem(OrderItem item)
+        {
+            ValidateItemNonExistent(item);
+            if (item.Quantity > MAX_UNITS_ITEM) throw new DomainException($"Maximum units {MAX_UNITS_ITEM} per product above the allowed");
+
+            var itemExisting = _orderItems.FirstOrDefault(p => p.ProductId == item.ProductId);
+
+            _orderItems.Remove(itemExisting);
+            _orderItems.Add(item);
+
+            CalculateTotalValueOrder();
+        }
+
 
         public void CreateDraft()
         {
