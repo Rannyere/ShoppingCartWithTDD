@@ -11,7 +11,7 @@ namespace PlanetStore.Sales.Domain.Tests
         public void Voucher_ValidateVoucherTypeValueValid_MustBeValid()
         {
             // Arrange
-            var voucher = new Voucher("PROMO-15-EURO", null, 15, DiscountTypeVoucher.Value, 1, DateTime.Now.AddDays(15), true, false);
+            var voucher = new Voucher("PROMO-15-TEST", null, 15, DiscountTypeVoucher.Value, 1, DateTime.Now.AddDays(15), true, false);
 
             // Act
             var result = voucher.IsValidForUse();
@@ -46,7 +46,7 @@ namespace PlanetStore.Sales.Domain.Tests
         public void Voucher_ValidateVoucherTypePercentageValid_MustBeValid()
         {
             // Arrange
-            var voucher = new Voucher("PROMO-15-EURO", 10, null, DiscountTypeVoucher.Percentage, 1, DateTime.Now.AddDays(15), true, false);
+            var voucher = new Voucher("PROMO-15-TEST", 15, null, DiscountTypeVoucher.Percentage, 1, DateTime.Now.AddDays(15), true, false);
 
             // Act
             var result = voucher.IsValidForUse();
