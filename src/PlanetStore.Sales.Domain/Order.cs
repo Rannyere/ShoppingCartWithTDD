@@ -79,6 +79,15 @@ namespace PlanetStore.Sales.Domain
             CalculateTotalValueOrder();
         }
 
+        public void RemoveItem(OrderItem item)
+        {
+            ValidateItemNonExistent(item);
+
+            _orderItems.Remove(item);
+
+            CalculateTotalValueOrder();
+        }
+
 
         public void CreateDraft()
         {

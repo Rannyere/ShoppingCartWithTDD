@@ -143,5 +143,39 @@ namespace PlanetStore.Sales.Domain.Tests
             // Act & Assert
             Assert.Throws<DomainException>(() => order.UpdateItem(orderItemUpdated));
         }
+
+        [Fact(DisplayName = "Remove Item Order Nonexistent")]
+        [Trait("Category", "Order Tests")]
+        public void RemoveItemOrder_ItemNonexistent_MustReturnException()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var orderItemRemove = new OrderItem(Guid.NewGuid(), "Product Test", 1, 100);
+
+            // Act & Assert
+            Assert.Throws<DomainException>(() => order.RemoveItem(orderItemRemove));
+        }
+
+
+        [Fact(DisplayName = "Remove Item  Must Calculate Total Value")]
+        [Trait("Category", "Order Tests")]
+        public void RemoveItemOrder_ItemExistent_MustUpdateTotalValue()
+        {
+            // Arrange
+            var order = Order.OrderFactory.NewOrderDraft(Guid.NewGuid());
+            var productId = Guid.NewGuid();
+            var orderItem1 = new OrderItem(Guid.NewGuid(), "Product XYZ", 2, 100);
+            var orderItem2 = new OrderItem(productId, "Product Test", 3, 15);
+            order.AddItem(orderItem1);
+            order.AddItem(orderItem2);
+
+            var totalOrder = orderItem2.Quantity * orderItem2.UnitValue;
+
+            // Act
+            order.RemoveItem(orderItem1);
+
+            // Assert
+            Assert.Equal(totalOrder, order.TotalValue);
+        }
     }
 }
