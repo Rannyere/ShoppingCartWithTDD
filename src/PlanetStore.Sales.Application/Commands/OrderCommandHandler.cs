@@ -28,10 +28,10 @@ namespace PlanetStore.Sales.Application.Commands
 
             _orderRepository.Add(Order.OrderFactory.NewOrderDraft(message.CustomerId));
 
-            await _mediator.Publish(new OrderItemAddedEvent(
-                order.CustomerId, order.Id, message.ProductId, message.ProductName, message.Quantity, message.UnitValue), cancellationToken);
+            order.AddEvent(new OrderItemAddedEvent(
+                order.CustomerId, order.Id, message.ProductId, message.ProductName, message.Quantity, message.UnitValue));
 
-            return true;
+            return await _orderRepository.UnitOfWork.Commit();
         }
     }
 }
