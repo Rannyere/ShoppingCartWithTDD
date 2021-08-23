@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlanetStore.Core\PlanetStore.Core.csproj" />
+    <ProjectReference Include="..\PlanetStore.Sales.Domain\PlanetStore.Sales.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="Events\" />
+    <Folder Include="Queries\" />
+  </ItemGroup>
+</Project>

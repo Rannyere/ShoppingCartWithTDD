@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Sales.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Core", "src\PlanetStore.Core\PlanetStore.Core.csproj", "{AF44C62D-A56E-45AD-B518-DA47D2651C03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetStore.Sales.Application", "src\PlanetStore.Sales.Application\PlanetStore.Sales.Application.csproj", "{B0DB5256-6648-4C6D-97BA-281871B93E8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{AF44C62D-A56E-45AD-B518-DA47D2651C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF44C62D-A56E-45AD-B518-DA47D2651C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF44C62D-A56E-45AD-B518-DA47D2651C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DB5256-6648-4C6D-97BA-281871B93E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DB5256-6648-4C6D-97BA-281871B93E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DB5256-6648-4C6D-97BA-281871B93E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DB5256-6648-4C6D-97BA-281871B93E8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +63,6 @@ Global
 		{4CA80D0A-6258-40E0-88FC-4C5DA4D17FE6} = {0B443A84-0E46-410A-847B-913E31C068FB}
 		{555A4608-55CA-4C98-BF1A-FED8C2D710C5} = {0B443A84-0E46-410A-847B-913E31C068FB}
 		{AF44C62D-A56E-45AD-B518-DA47D2651C03} = {0B443A84-0E46-410A-847B-913E31C068FB}
+		{B0DB5256-6648-4C6D-97BA-281871B93E8D} = {0B443A84-0E46-410A-847B-913E31C068FB}
 	EndGlobalSection
 EndGlobal
