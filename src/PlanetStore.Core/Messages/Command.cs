@@ -1,9 +1,10 @@
 ﻿using System;
 using FluentValidation.Results;
+using MediatR;
 
 namespace PlanetStore.Core.Messages
 {
-    public abstract class Command
+    public abstract class Command : Message, IRequest<bool>
     {
         public DateTime Timestamp { get; private set; }
         public ValidationResult ValidationResult { get; set; }

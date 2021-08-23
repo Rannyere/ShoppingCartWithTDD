@@ -6,7 +6,7 @@ using PlanetStore.Core.DomainObjects;
 
 namespace PlanetStore.Sales.Domain
 {
-    public class Order
+    public class Order : Entity
     {
         public static int MAX_UNITS_ITEM => 15;
         public static int MIN_UNITS_ITEM => 1;
