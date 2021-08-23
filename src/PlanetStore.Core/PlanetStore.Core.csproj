@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="DomainObjects\" />
+    <Folder Include="Messages\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.3.0" />

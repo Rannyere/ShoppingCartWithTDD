@@ -1,12 +1,13 @@
 ﻿using System;
 using FluentValidation;
 using FluentValidation.Results;
+using PlanetStore.Core.Messages;
 using PlanetStore.Sales.Application.Commands;
 using PlanetStore.Sales.Domain;
 
 namespace PlanetStore.Sales.Application.Commands
 {
-    public class AddItemOrderCommand
+    public class AddItemOrderCommand : Command
     {
         public Guid CustomerId { get; set; }
         public Guid ProductId { get; set; }
@@ -23,9 +24,10 @@ namespace PlanetStore.Sales.Application.Commands
             UnitValue = unitValue;
         }
 
-        public bool IsValid()
+        public override bool IsValid()
         {
-            return new AddItemOrderCommandValidation().Validate(this).IsValid;
+            ValidationResult = new AddItemOrderCommandValidation().Validate(this);
+            return ValidationResult.IsValid;
         }
     }
 }
